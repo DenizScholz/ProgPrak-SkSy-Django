@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "C:\\Users\\deniz\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "beautify.language": {
+        "html": [
+            "htm", "html", "django-html"
+        ]
+    }
+}

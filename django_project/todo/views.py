@@ -6,3 +6,9 @@ def home(request):
         'title': 'Home',
     }
     return render(request, 'todo/home.html', context)
+
+def impressum(request):
+    context = {
+        'title': 'Impressum',
+    }
+    return render(request, 'todo/impressum.html', context)
