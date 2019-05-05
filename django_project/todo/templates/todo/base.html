@@ -18,9 +18,9 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark custom-navbar">
         <!-- Navbar Brand -->
-        <a class="navbar-brand" href="index.html">TODO</a>
+        <a class="navbar-brand" href="{% url 'home' %}">TODO</a>
         <!-- Navbar Toggler -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.html">Übersicht <span
+                <a class="nav-item nav-link active" href="{% url 'home' %}">Übersicht <span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="html/new_todo.html">Neu erstellen</a>
                 <a class="nav-item nav-link" href="html/impressum.html">Impressum</a>
