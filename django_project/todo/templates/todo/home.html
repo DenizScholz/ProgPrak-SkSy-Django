@@ -1,6 +1,6 @@
 {% extends "todo/base.html" %}
-
 {% block content %}
+
 <!--- Tabelle von TODO's --->
 <div class="container-fluid pt-3 pb-5" style="max-width: 900px;">
     <!-- Heading Übersicht -->
@@ -14,8 +14,8 @@
                 <thead>
                     <tr>
                         <th scope="col" style="width: 70%;">
-                            <div class="list-inline-item">TODO's</div> <small class="text-muted"> - Click to
-                                edit</small>
+                            <div class="list-inline-item">TODO's</div>
+                            <small class="text-muted"> - Click to edit</small>
                         </th>
                         <th scope="col">Datum</th>
                         <th scope="col">%</th>
@@ -23,59 +23,21 @@
                 </thead>
                 <!-- Table Body -->
                 <tbody>
-                    <!-- Table Item - TODO ITEM -->
+                    <!-- Table Items -->
+                    {% for todo in todos %}
                     <tr onclick="window.location='#'; console.log('Clicked')">
-                        <td>Beispielseite mit dem Bootstrap Framework anlegen <br><a href="html/edit_todo.html"
-                                class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a></td>
-                        <td>26. April 2018</td>
-                        <td>0%</td>
+                        <td>{{ todo.description }}<br>
+                            <a href="html/edit_todo.html" class="text-muted "><small>Bearbeiten</small></a>
+                            <a href="#" class="text-muted ml-1"><small>Löschen</small></a>
+                        </td>
+                        <td>{{ todo.due_date }}</td>
+                        <td>{{ todo.done_percentage }}%</td>
                     </tr>
-                    <!-- Table Item - TODO ITEM -->
-                    <tr>
-                        <td>Eine Übersichtsseite mit mehreren Beispiel TODOs (Tabellarisch) <br><a
-                                href="html/edit_todo.html" class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a></td>
-                        <td>20. Mai 2017</td>
-                        <td>50%</td>
-                    </tr>
-                    <!-- Table Item - TODO ITEM -->
-                    <tr>
-                        <td>Eine Seite um ein neues TODO anlegen zu können <br><a href="html/edit_todo.html"
-                                class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a></td>
-                        <td>15. April 2019</td>
-                        <td>80%</td>
-                    </tr>
-                    <!-- Table Item - TODO ITEM -->
-                    <tr>
-                        <td>Eine Seite um zu demonstrieren wie ein TODO editiert werden kann <br><a
-                                href="html/edit_todo.html" class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a></td>
-                        <td>19. April 2019</td>
-                        <td>75%</td>
-                    </tr>
-                    <!-- Table Item - TODO ITEM -->
-                    <tr>
-                        <td>Ein Impressum (Name der Autoren) <br><a href="html/edit_todo.html"
-                                class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a> </td>
-                        <td>15. April 2019</td>
-                        <td>20%</td>
-                    </tr>
-                    <!-- Table Item - TODO ITEM -->
-                    <tr>
-                        <td>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut
-                            labore et dolore magna aliquyam erat, sed diam voluptua. At v<br><a
-                                href="html/edit_todo.html" class="text-muted "><small>Bearbeiten</small></a><a href="#"
-                                class="text-muted ml-1"><small>Löschen</small></a> </td>
-                        <td>15. April 2019</td>
-                        <td>20%</td>
-                    </tr>
+                    {% endfor %} 
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
 {% endblock content %}
