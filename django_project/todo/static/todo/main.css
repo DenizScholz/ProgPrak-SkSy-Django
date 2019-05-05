@@ -1,0 +1,45 @@
+html {
+	min-height: 100%;
+	position: relative;
+
+}
+
+body {
+	margin-bottom: 80px;
+	background-color: #121212;
+	color: white;
+}
+
+#footer {
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	height: 80px;
+	background-color: #272727;
+
+}
+
+.footer-block {
+	margin: 20px 0;
+}
+
+
+.custom-navbar {
+	background-color: #272727;
+}
+
+.custom-table {
+	background-color: #282828;
+}
+
+.custom-card {
+	border-color: #282828;
+}
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
