@@ -1,0 +1,40 @@
+{% extends "todo/base.html" %}
+{% block content %}
+<!-- Seiteninhalt --->
+<!-- Container der die volle breite nutzt, mt : margin-top  -->
+<div class="container-fluid mt-3 " style="max-width: 900px;">
+    <!-- display : header preset, py : padding top/bottom -->
+    <h5 class="display-4 py-5 text-center">Impressum</h5>
+    <!-- erschafft eine Reihe für Bootstrap Grid -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="jumbotron" style="background-color: #282828; padding:20px;">
+                <h1 class="display-6">Deniz Scholz </h1>
+                <!-- my : margin top/bottom -->
+                <hr class="my-4" style="background-color: white;">
+                <p>4379 Frum Street <br>
+                    Nashville, 37212 <br>
+                    Tennessee USA <br>
+                    <br>
+                    615-297-9607 <br>
+                    email@email.email
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="jumbotron" style="background-color: #282828; padding:20px;">
+                <h1 class="display-6">Marcin Lewandowski</h1>
+                <!-- my : margin top/bottom -->
+                <hr class="my-4" style="background-color: white;">
+                <p>112 Camel Back Road <br>
+                    Tulsa, 74145 <br>
+                    Oklahoma USA <br>
+                    <br>
+                    918-634-4465 <br>
+                    email@email.email
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
