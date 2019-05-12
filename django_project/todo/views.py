@@ -20,7 +20,19 @@ def todo_new(request):
             return redirect('home')
     else:
         form = TodoForm()
-    return render(request, 'todo/todo_new.html', {'form': form})
+    return render(request, 'todo/todo_edit.html', {'form': form})
+
+def todo_edit(request, id):
+    todo = get_object_or_404(Todo, pk=id)
+    if request.method == "POST":
+        form = TodoForm(request.POST, instance=todo)
+        if form.is_valid():
+            todo = form.save(commit=False)
+            todo.save()
+            return redirect('todo_detail', id=todo.pk)
+    else:
+        form = TodoForm(instance=todo)
+    return render(request, 'todo/todo_edit.html', {'form': form})
 
 def todo_delete(request, id):
     todo = get_object_or_404(Todo, pk=id)
