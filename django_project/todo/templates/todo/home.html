@@ -27,7 +27,7 @@
                     {% for todo in todos %}
                     <tr onclick="window.location='#'; console.log('Clicked')">
                         <td>{{ todo.description }}<br>
-                            <a href="{% url 'todo_detail' id=todo.id %}" class="text-muted "><small>Bearbeiten</small></a>
+                            <a href="{% url 'todo_edit' id=todo.id %}" class="text-muted "><small>Bearbeiten</small></a>
                             <a href="{% url 'todo_delete' id=todo.id %}" class="text-muted ml-1"><small>Löschen</small></a>
                         </td>
                         <td>{{ todo.due_date }}</td>
