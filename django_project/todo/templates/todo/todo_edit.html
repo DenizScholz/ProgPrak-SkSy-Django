@@ -1,10 +1,14 @@
 {% extends 'todo/base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
+<div class="jumbotron" style="margin:auto; margin-top:200px; padding:20px; width: 230px; color:#383838; font-family: Asap, sans-serif;">
 <h2>New post</h2>
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default btn-dark">Save</button>
+    {{ form|crispy }}
+    <button type="submit" class="save btn btn-default btn-dark" style="margin-top:20px;">Save</button>
 </form>
+</div>
 {% endblock %}
