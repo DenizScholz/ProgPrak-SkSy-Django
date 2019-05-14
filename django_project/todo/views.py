@@ -6,7 +6,7 @@ from .forms import TodoForm
 def home(request):
     context = {
         'title': 'Home',
-        'todos': Todo.objects.all(),
+        'todos': Todo.objects.order_by('due_date'),
     }
     return render(request, 'todo/home.html', context)
 
@@ -32,7 +32,7 @@ def todo_edit(request, id):
         if form.is_valid():
             todo = form.save(commit=False)
             todo.save()
-            return redirect('todo_detail', id=todo.pk)
+            return redirect('home')
     else:
         form = TodoForm(instance=todo)
     context = {
