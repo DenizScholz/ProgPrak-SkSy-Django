@@ -3,7 +3,6 @@ from .models import Todo
 from datetime import datetime
 from .forms import TodoForm
 
-# Create your views here.
 def home(request):
     context = {
         'title': 'Home',
@@ -20,7 +19,11 @@ def todo_new(request):
             return redirect('home')
     else:
         form = TodoForm()
-    return render(request, 'todo/todo_edit.html', {'form': form})
+    context = {
+        'form': form,
+        'title': 'New Todo',
+    }
+    return render(request, 'todo/todo_edit.html', context)
 
 def todo_edit(request, id):
     todo = get_object_or_404(Todo, pk=id)
@@ -32,7 +35,11 @@ def todo_edit(request, id):
             return redirect('todo_detail', id=todo.pk)
     else:
         form = TodoForm(instance=todo)
-    return render(request, 'todo/todo_edit.html', {'form': form})
+    context = {
+        'form': form,
+        'title': 'Edit Todo',
+    }
+    return render(request, 'todo/todo_edit.html', context)
 
 def todo_delete(request, id):
     todo = get_object_or_404(Todo, pk=id)

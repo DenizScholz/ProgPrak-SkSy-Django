@@ -4,7 +4,12 @@
 <!--- Tabelle von TODO's --->
 <div class="container-fluid pt-3 pb-5" style="max-width: 900px;">
     <!-- Heading Übersicht -->
-    <h5 class="display-4 py-5 text-center">Übersicht</h5>
+    <h5 class="display-4 py-3 text-center">Übersicht</h5>
+
+    <div class="text-right">
+        <a href="{% url 'todo_new'%}" class="btn btn-sm btn-success my-3">New Todo</a>
+    </div>
+
     <!-- Card Wrapper -->
     <div class="card border border-dark rounded">
         <!-- Responsive Table -->
@@ -13,11 +18,11 @@
                 <!-- Table Head -->
                 <thead>
                     <tr>
-                        <th scope="col" style="width: 70%;">
+                        <th scope="col">
                             <div class="list-inline-item">TODO's</div>
                             <small class="text-muted"> - Click to edit</small>
                         </th>
-                        <th scope="col">Datum</th>
+                        <th scope="col" style='min-width: 120px; max-width: 120px;'>Datum</th>
                         <th scope="col">%</th>
                     </tr>
                 </thead>
@@ -25,15 +30,16 @@
                 <tbody>
                     <!-- Table Items -->
                     {% for todo in todos %}
-                    <tr onclick="window.location='#'; console.log('Clicked')">
+                    <tr>
                         <td>{{ todo.description }}<br>
                             <a href="{% url 'todo_edit' id=todo.id %}" class="text-muted "><small>Bearbeiten</small></a>
-                            <a href="{% url 'todo_delete' id=todo.id %}" class="text-muted ml-1"><small>Löschen</small></a>
+                            <a href="{% url 'todo_delete' id=todo.id %}"
+                                class="text-muted ml-1"><small>Löschen</small></a>
                         </td>
                         <td>{{ todo.due_date }}</td>
                         <td>{{ todo.done_percentage }}%</td>
                     </tr>
-                    {% endfor %} 
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
