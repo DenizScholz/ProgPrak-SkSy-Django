@@ -6,12 +6,12 @@
 
 {% block content %}
 <div class="container p-5" style="max-width: 600px;">
-    <h2 class="text-center">{{title}}</h2>
+    <h2 class="display-4">{{title}}</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form | crispy}}
         {{ form.media}}
-        <button type="submit" class="save btn btn-lg btn-block btn-dark mt-5">Save</button>
+        <button type="submit" class="save btn btn-lg btn-block btn-primary mt-5">Save</button>
     </form>
     <div class="text-right">
             <a href="{% url 'home' %}" class="btn btn-warning btn-block mt-2">Back</a>

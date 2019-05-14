@@ -4,10 +4,10 @@
 <!--- Tabelle von TODO's --->
 <div class="container-fluid pt-3 pb-5" style="max-width: 900px;">
     <!-- Heading Übersicht -->
-    <h5 class="display-4 py-3 text-center">Übersicht</h5>
+    <h5 class="display-4 py-3 text-center">Overview</h5>
 
     <div class="text-right">
-        <a href="{% url 'todo_new'%}" class="btn btn-sm btn-success my-3">New Todo</a>
+        <a href="{% url 'todo_new'%}" class="btn btn-sm btn-primary my-3">New Todo</a>
     </div>
 
     <!-- Card Wrapper -->
@@ -32,9 +32,9 @@
                     {% for todo in todos %}
                     <tr>
                         <td>{{ todo.description }}<br>
-                            <a href="{% url 'todo_edit' id=todo.id %}" class="text-muted "><small>Bearbeiten</small></a>
+                            <a href="{% url 'todo_edit' id=todo.id %}" class="text-muted"><small>Edit</small></a>
                             <a href="{% url 'todo_delete' id=todo.id %}"
-                                class="text-muted ml-1"><small>Löschen</small></a>
+                                class=" text-danger ml-2"><small>Delete</small></a>
                         </td>
                         <td>{{ todo.due_date }}</td>
                         <td>{{ todo.done_percentage }}%</td>
