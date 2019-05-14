@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Asap:400,500,700');
-
 html {
 	min-height: 100%;
 	position: relative;
+
 }
 
 body {
@@ -17,6 +16,7 @@ body {
 	position: absolute;
 	height: 80px;
 	background-color: #272727;
+
 }
 
 .footer-block {
@@ -43,4 +43,3 @@ body {
 @media (max-width: 768px) {}
 
 @media (max-width: 576px) {}
-
